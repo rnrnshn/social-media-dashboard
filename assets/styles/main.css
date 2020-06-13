@@ -7,8 +7,7 @@
   --card-bg: hsl(228, 28%, 20%);
   --primary-text-color: hsl(228, 34%, 66%);
   --second-text-color: hsl(0, 0%, 100%);
-  --toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-  
+  --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));    
   /* Social Mead Colors */
   --facebook: hsl(208, 92%, 53%);
   --twitter: hsl(203, 89%, 53%);
@@ -24,7 +23,7 @@
 [data-theme="light"] {
   /* Light Theme */
   --bg-color: hsl(0, 0%, 100%);
-  --top-bg-patterm: hsl(225, 100%, 98%);
+  --top-bg-pattern: hsl(225, 100%, 98%);
   --card-bg: hsl(227, 47%, 96%);
   --primary-text-color: hsl(228, 12%, 44%);
   --secondary-text-color: hsl(230, 17%, 14%);
@@ -43,12 +42,17 @@ body {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   background: var(--bg-color);
-  color: var(--primary-text-color); 
+  color: var(--primary-text-color);
 }
 
-h1, h2,
-h3, h4,
-h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.stats__user-name,
+.stats__daily-number {
   font-weight: 700;
 }
 
@@ -59,10 +63,165 @@ h5, h6 {
 .down {
   color: var(--down);
 }
- 
-.header_tittle,
+
+.header_title,
 .stats__followers-number,
 .overview_title,
 .item__bottom-title {
   color: var(--second-text-color);
+}
+
+/* HEADER */
+.header__dashboard {
+  background-color: var(--top-bg-pattern);
+  padding: 2rem 1.5rem 6rem;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.header--text {}
+
+.header_title {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.header_subtitle {
+  margin-bottom: 1rem;
+}
+
+.header-theme-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle_text {
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.theme-switch {
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+  position: relative;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background: var(--toggle);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.slider::before {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  transition: .4s;
+  background-color: var(--top-bg-pattern);
+}
+
+input:checked+.slider {
+  background-color: #66bb6a;
+}
+
+input:checked+.slider::before {
+  transform: translateX(20px);
+}
+
+.round {
+  border-radius: 34px;
+}
+
+.round::before {
+  border-radius: 50%;
+}
+
+/* S T A T S -- D A S H B O A R D */
+.stats__dashboard {
+  padding: 2rem 1.5rem;
+  margin: -6rem 0 0 0;
+}
+
+/* S T A T S -- I T E M */
+.stats--item {
+  padding: 1.5rem 4rem;
+  text-align: center;
+  background: var(--card-bg);
+  margin-bottom: 1rem;
+  border-radius: .2rem;
+  transition: .2s;
+}
+
+/* S T A T S --  U S E R */
+.stats_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stats__user-image {
+  margin-right: .5rem;
+}
+
+.stats__user-name {
+  font-size: .9rem;
+}
+
+/*  S T A T S -- T O T A L -- F O L L O W E R S */
+.stats_followers {
+  margin-bottom: 2rem;
+}
+
+.stats__followers-number {
+  font-size: 4rem;
+}
+
+.stats__folowers-text {
+  letter-spacing: .2rem;
+}
+
+/* S T A T S -- D A I L Y -- E N G A G E M E N T */
+.stats_daily {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats__daily-icon {
+  margin-right: .3rem;
+}
+
+@media (min-width: 1200px) {
+
+  /* HEADER */
+  .header__dashboard {
+    padding: 2rem 6rem 6rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* S T A T S -- D A S H B O A R D */
+  .stats__dashboard {
+    padding: 0 6rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }
