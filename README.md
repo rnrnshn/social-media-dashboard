@@ -4,7 +4,8 @@
 
 ## The challenge
 
-The challenge is to build out this Social Media Dashboard and get it looking as close to the design as possible.
+The challenge is to build out this Social Media Dashboard and get it looking as
+close to the design as possible.
 
 Users should be able to:
 
@@ -14,8 +15,10 @@ Users should be able to:
 
 ## Where to find everything
 
-The task is to build out the project to the designs inside the `/design` folder. Both the mobile and desktop version of the design to work to. 
+The task is to build out the project to the designs inside the `/design` folder.
+Both the mobile and desktop version of the design to work to.
 
-The designs are in JPG static format. 
+The designs are in JPG static format.
 
-There is also a `style-guide.md` file, which contains the information such as color palette and fonts.
+There is also a `style-guide.md` file, which contains the information such as
+color palette and fonts.
